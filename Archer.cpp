@@ -42,14 +42,14 @@ void Archer::receiveAttack(int attackPoints) {
    int chance = rand() % 100;
     if (chance < agility) {
         // for example, if the archer has 30 agility, there is a 30% chance to dodge the attack
-         cout << type << " dodged the attack!" << endl;
+         cout << type << " dodged the attack!" << endl << endl;
          return;
     } else {
         set_health(get_health() - attackPoints);
         if (get_health() < 0) {
             set_health(0);
         }
-        cout << type << " received " << attackPoints << " damage." << endl;
+        cout << type << " received " << attackPoints << " damage." << endl << endl;
     }
 
 }
@@ -71,7 +71,7 @@ void Archer::attack(CombatUnit &target){
     }
 
     target.receiveAttack(damage);
-    cout << type << " attacked " << target.type << " for " << damage << " damage." << endl;
+    cout << type << " attacked " << target.type << " for " << damage << " damage." << endl << endl;
 }
 
 void Archer::print() {
