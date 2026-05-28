@@ -1,6 +1,7 @@
 #include "CombatUnit.h"
 #include "Archer.h"
 #include "Mage.h"
+#include "Warrior.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -50,21 +51,36 @@ int main(){
     // archer1.print();
 
     //testing the mage and archer together
+    // Archer archer1("Archer", 80, 25, 4, 30.0, 20);
+    // Mage mage1("Mage", 70, 30, 5, 50);
+    // cout << "Fight Start" << endl;
+    // archer1.print();
+    // mage1.print();
+
+    // cout << "The " << archer1.type << " attacks " << mage1.type << "!" << endl;
+    // archer1.attack(mage1);
+
+    // mage1.print();
+    // cout << "The " << mage1.type << " attacks " << archer1.type << "!" << endl;
+    // mage1.attack(archer1);
+    // archer1.print();
+
+    // testing the revive abilities
     Archer archer1("Archer", 80, 25, 4, 30.0, 20);
     Mage mage1("Mage", 70, 30, 5, 50);
-    cout << "Fight Start" << endl;
-    archer1.print();
-    mage1.print();
+    Warrior warrior1("Warrior", 150, 20, 3, 25);
 
-    cout << "The " << archer1.type << " attacks " << mage1.type << "!" << endl;
-    archer1.attack(mage1);
-
-    mage1.print();
-    cout << "The " << mage1.type << " attacks " << archer1.type << "!" << endl;
-    mage1.attack(archer1);
+    // testing the archer's revive ability
+    archer1.receiveAttack(100); // should trigger revive using agility
     archer1.print();
 
-    
+    // testing the mage's revive ability
+    mage1.receiveAttack(100); // should trigger revive using mana
+    mage1.print();
+
+    // testing the warrior's revive ability
+    warrior1.receiveAttack(150); // should trigger revive using strength
+    warrior1.print();
 
     return 0;
 

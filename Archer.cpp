@@ -48,9 +48,9 @@ void Archer::revive(){
     be done after updating the health points. By doing so, you will need to override and ensure runtime polymorphic behavior. */
 
     // for the archer, they could revive by using agility to dodge a fatal attack.
-    if (get_health() <= 0 && agility >= 50) { // if the archer has at least 50 agility, they can revive
+    if (get_health() <= 0 && agility >= 20) { // if the archer has at least 20 agility, they can revive
         set_health(get_life() / 2); // restore half of the life points
-        agility -= 50; // reduce agility by 50
+        agility -= 20; // reduce agility by 20
         cout << type << " revived using agility! Current health: " << get_health() << ", Remaining agility: " << agility << endl;
     } else if (get_health() <= 0) {
         set_health(0);
