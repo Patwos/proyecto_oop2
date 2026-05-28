@@ -1,6 +1,8 @@
 #include "CombatUnit.h"
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -104,17 +106,17 @@ void CombatUnit::attack(CombatUnit &target){
         damage = rand() % (this -> attackpts - halfattack +1) + halfattack;
     }
 
-    target.receiveAttack(damage);
+target.receiveAttack(damage);
     /*Method void attack(Unit& target). This method calculates the attack damage dealt to the target as follows:
      If the target has a higher level than this unit, the attack damage is a random number between 1 and half of 
      the attack points. If the target’s level is lower or equal, the attack damage is a random number between half of the
     attack points and the total attack points. This method must also call the target's receiveAttack method to subtract health
      points from the target.*/
+    
 }
 
 void CombatUnit::print(){
-    cout << "Unit:" << type << endl << "Level: "<<level<<endl;
-    cout << "Life: "<< health <<"/"<<life<<" ";
+    cout << "Unit:" <<type<< "Nivel:"<<level<<endl;
+    cout << "Life:"<<health<<"/"<<life<<" ";
     printHealthBar();
-    cout << endl << endl;
 }
