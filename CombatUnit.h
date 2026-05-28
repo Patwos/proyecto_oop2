@@ -32,9 +32,10 @@ class CombatUnit {  // clase base para las unidades de combate
         // metodos
         int healthPercentage();
         void printHealthBar();
-        void receiveAttack(int attackPoints);
-        void attack(CombatUnit &target);
-        void print();
+        virtual void revive() = 0;
+        virtual void receiveAttack(int attackPoints);
+        virtual void attack(CombatUnit &target);
+        virtual void print();
 
 };
 

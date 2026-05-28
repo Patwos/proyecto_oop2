@@ -16,6 +16,8 @@ class Archer: public CombatUnit{
        void setAccuracy(float accuracy);
        int getAgility();
        void setAgility(int agility);
+
+       void revive();
        void receiveAttack(int attackPoints);
        void attack(CombatUnit &target);
        void print();

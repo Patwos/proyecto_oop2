@@ -25,12 +25,12 @@ void Warrior::set_strength(int strength){
 
 void Warrior::attack(CombatUnit &target){
     int damage = 0; 
-    int halfattack = this->attackpts / 2; 
+    int halfattack = this->get_attackpts() / 2; 
 
-    if (target.get_level() > this->level){
+    if (target.get_level() > this->get_level()) {
         damage = rand() % halfattack + 1;
     } else {
-        damage = rand() % (this->attackpts - halfattack + 1) + halfattack; 
+        damage = rand() % (this->get_attackpts() - halfattack + 1) + halfattack; 
     }
 
     int finalDamage = damage + this->strength;
@@ -48,9 +48,9 @@ void Warrior::receiveAttack(int attackPoints){
 
     cout << "The " << this->type << " blocked " << this->strength << " of damage thanks to their strength. Actual damage received: " << mitigatedDamage << endl;
 
-    this->health = this->health - mitigatedDamage;
-    if (this->health < 0) {
-        this->health = 0;
+    this->set_health(this->get_health() - mitigatedDamage);
+    if (this->get_health() < 0) {
+        this->set_health(0);
     }
 } 
 

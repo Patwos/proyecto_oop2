@@ -16,6 +16,7 @@ class Warrior : public CombatUnit {
         int get_strength();
         void set_strength(int strength);
 
+        void revive();
         void attack(CombatUnit &target);
         void receiveAttack(int attackPoints);
         void print();

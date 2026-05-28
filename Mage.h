@@ -11,6 +11,7 @@ class Mage: public CombatUnit{
         Mage(string type, int life, int attackpts, int level, int mana);
         int getMana();
         void setMana(int mana);
+        void revive();
         void receiveAttack(int attackPoints);
         void attack(CombatUnit &target);
         void print();
